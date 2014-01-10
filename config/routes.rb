@@ -1,5 +1,7 @@
 Ksat::Application.routes.draw do
-  resources :ksat_lists
+  resources :ksat_lists do
+    resources :task_items
+  end
   root 'ksat_lists#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

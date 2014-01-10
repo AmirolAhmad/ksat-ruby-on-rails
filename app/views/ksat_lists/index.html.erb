@@ -6,8 +6,6 @@
       <th>Title</th>
       <th>Description</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -16,9 +14,12 @@
       <tr id="<%= dom_id(ksat_list) %>">
         <td><%= ksat_list.title %></td>
         <td><%= ksat_list.description %></td>
-        <td><%= link_to 'Show', ksat_list %></td>
-        <td><%= link_to 'Edit', edit_ksat_list_path(ksat_list) %></td>
-        <td><%= link_to 'Destroy', ksat_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to "List Items", ksat_list_task_items_path(ksat_list) %>
+          <%= link_to 'Show', ksat_list %>
+          <%= link_to 'Edit', edit_ksat_list_path(ksat_list) %>
+          <%= link_to 'Destroy', ksat_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
