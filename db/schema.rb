@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140110140252) do
+ActiveRecord::Schema.define(version: 20140110170547) do
 
   create_table "ksat_lists", force: true do |t|
     t.string   "title"
@@ -19,5 +19,14 @@ ActiveRecord::Schema.define(version: 20140110140252) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "task_items", force: true do |t|
+    t.integer  "ksat_list_id"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "task_items", ["ksat_list_id"], name: "index_task_items_on_ksat_list_id"
 
 end
