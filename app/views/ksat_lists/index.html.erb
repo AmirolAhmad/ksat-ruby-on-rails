@@ -13,7 +13,7 @@
 
   <tbody>
     <% @ksat_lists.each do |ksat_list| %>
-      <tr>
+      <tr id="<%= dom_id(ksat_list) %>">
         <td><%= ksat_list.title %></td>
         <td><%= ksat_list.description %></td>
         <td><%= link_to 'Show', ksat_list %></td>
