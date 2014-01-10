@@ -1,0 +1,29 @@
+<h1>Listing ksat_lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ksat_lists.each do |ksat_list| %>
+      <tr>
+        <td><%= ksat_list.title %></td>
+        <td><%= ksat_list.description %></td>
+        <td><%= link_to 'Show', ksat_list %></td>
+        <td><%= link_to 'Edit', edit_ksat_list_path(ksat_list) %></td>
+        <td><%= link_to 'Destroy', ksat_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ksat list', new_ksat_list_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @ksat_list.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @ksat_list.description %>
+</p>
+
+<%= link_to 'Edit', edit_ksat_list_path(@ksat_list) %> |
+<%= link_to 'Back', ksat_lists_path %>
