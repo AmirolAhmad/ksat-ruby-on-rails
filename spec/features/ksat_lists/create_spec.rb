@@ -48,4 +48,40 @@ describe "Creating ksat lists" do
 		visit "/ksat_lists"
 		expect(page).to_not have_content("This is what I'm doing today.")
 	end
+
+	it "displays an error when the task list has no description" do
+		expect(KsatList.count).to eq(0)
+
+		visit "/ksat_lists"
+		click_link "New Ksat list"
+		expect(page).to have_content("New ksat_list")
+
+		fill_in "Title", with: "Suprima S"
+		fill_in "Description", with: ""
+		click_button "Create Ksat list"
+
+		expect(page).to have_content("error")
+		expect(KsatList.count).to eq(0)
+
+		visit "/ksat_lists"
+		expect(page).to_not have_content("Suprima S")
+	end
+
+	it "displays an error when the task list has a description less than 5 characters" do
+		expect(KsatList.count).to eq(0)
+
+		visit "/ksat_lists"
+		click_link "New Ksat list"
+		expect(page).to have_content("New ksat_list")
+
+		fill_in "Title", with: "Suprima S"
+		fill_in "Description", with: "Car"
+		click_button "Create Ksat list"
+
+		expect(page).to have_content("error")
+		expect(KsatList.count).to eq(0)
+
+		visit "/ksat_lists"
+		expect(page).to_not have_content("Suprima S")
+	end
 end
