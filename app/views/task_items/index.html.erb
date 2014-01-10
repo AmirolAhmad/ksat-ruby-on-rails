@@ -1,2 +1,8 @@
-<h1>TaskItems#index</h1>
+<h1><%= @ksat_list.title %></h1>
 <p>Find me in app/views/task_items/index.html.erb</p>
+
+<ul class="task_items">
+	<% @ksat_list.task_items.each do |task_items| %>
+	<li><%= task_items.content %></li>
+	<% end %>
+</ul>
