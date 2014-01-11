@@ -1,19 +1,4 @@
+<h1><%= @ksat_list.title %> - Editing Task List Item</h1>
 <%= form_for [@ksat_list, @task_item] do |form| %>
-	<% if @task_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@task_item.errors.count, "error") %> prohibited this task item from being saved:</h2>
-
-      <ul>
-      <% @task_item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-	
-	<%= form.label :content %>
-	<%= form.text_field :content %>
-	
-	<%= form.submit "Save" %>
-
+  <%= render partial: form %>
 <% end %>

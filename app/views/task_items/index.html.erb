@@ -5,6 +5,7 @@
 	<li id="<%= dom_id(task_item) %>">
 		<%= task_item.content %>
 		<%= link_to "Edit", edit_ksat_list_task_item_path(task_item) %>
+		<%= link_to "Delete", ksat_list_task_item_path(task_item), method: :delete, data: { confirm: "Are you sure?" } %>
 	</li>
 	<% end %>
 </ul>
