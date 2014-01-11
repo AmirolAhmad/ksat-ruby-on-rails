@@ -1,8 +1,11 @@
 <h1><%= @ksat_list.title %></h1>
 
 <ul class="task_items">
-	<% @ksat_list.task_items.each do |task_items| %>
-	<li><%= task_items.content %></li>
+	<% @ksat_list.task_items.each do |task_item| %>
+	<li id="<%= dom_id(task_item) %>">
+		<%= task_item.content %>
+		<%= link_to "Edit", edit_ksat_list_task_item_path(task_item) %>
+	</li>
 	<% end %>
 </ul>
 

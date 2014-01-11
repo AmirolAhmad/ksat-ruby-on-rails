@@ -1,5 +1,5 @@
 <%= form_for [@ksat_list, @task_item] do |form| %>
-  <% if @task_item.errors.any? %>
+	<% if @task_item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@task_item.errors.count, "error") %> prohibited this task item from being saved:</h2>
 
