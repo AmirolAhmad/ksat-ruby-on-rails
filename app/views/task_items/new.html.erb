@@ -1,0 +1,5 @@
+<%= form_for [@ksat_list, @task_item] do |form| %>
+	<%= form.label :content %>
+	<%= form.text_field :content %>
+	<%= form.submit "Save" %>
+<% end %>
