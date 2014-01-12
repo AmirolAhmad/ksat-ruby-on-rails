@@ -13,4 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require_self
 //= require_tree .
+
+$(document).ready(function () {
+	$('.ui.dropdown')
+	.dropdown();
+
+	$('.delete')
+	.popup({
+		title    : 'Delete',
+		content  : 'You can\'t undo this step once you have confirm to delete your task list item',
+		variation : 'small inverted'
+	});
+});

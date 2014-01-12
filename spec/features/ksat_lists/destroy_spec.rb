@@ -7,7 +7,7 @@ describe "Deleting task lists" do
 		visit "/ksat_lists"
 
 		within "#ksat_list_#{ksat_list.id}" do
-			click_link "Destroy"
+			click_link "Delete"
 		end
 		expect(page).to_not have_content(ksat_list.title)
 		expect(KsatList.count).to eq(0)

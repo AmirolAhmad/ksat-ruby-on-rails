@@ -3,13 +3,6 @@ require 'spec_helper'
 describe "Viewing task items" do
 	let!(:ksat_list) { KsatList.create(title: "Proton", description: "Suprima S") }
 
-	def visit_ksat_list(list)
-		visit "/ksat_lists"
-		within "#ksat_list_#{list.id}" do
-			click_link "List Items"
-		end
-	end
-
 	it "displays the title of the todo list" do
 		visit_ksat_list(ksat_list)
 		within("h1") do
