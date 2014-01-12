@@ -44,6 +44,12 @@ class TaskItemsController < ApplicationController
     redirect_to ksat_list_task_items_path
   end
 
+  def complete
+    @task_item = @ksat_list.task_items.find(params[:id])
+    @task_item.update_attribute(:completed_at, Time.now)
+    redirect_to ksat_list_task_items_path, notice: "Task item successfully marked as complete."
+  end
+
   def url_options
     { ksat_list_id: params[:ksat_list_id] }.merge(super)
   end

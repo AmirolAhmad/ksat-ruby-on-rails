@@ -1,6 +1,10 @@
 Ksat::Application.routes.draw do
   resources :ksat_lists do
-    resources :task_items
+    resources :task_items do
+      member do
+        patch :complete
+      end
+    end
   end
   root 'ksat_lists#index'
 
