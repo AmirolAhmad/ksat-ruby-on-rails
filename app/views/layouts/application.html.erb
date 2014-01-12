@@ -12,12 +12,6 @@
   <%= link_to '<i class="home icon"></i> Home'.html_safe, root_path, class: "active item" %>
   <%= link_to '<i class="briefcase icon"></i> Task Lists'.html_safe, ksat_lists_path, class: "item" %>
   <div class="right menu">
-    <div class="item">
-      <div class="ui icon input">
-        <input type="text" placeholder="Search...">
-        <i class="search link icon"></i>
-      </div>
-    </div>
     <div class="ui dropdown item">
       Language <i class="dropdown icon"></i>
       <div class="menu">
@@ -26,8 +20,17 @@
         <a class="item">Spanish</a>
       </div>
     </div>
-    <div class="item">
-        <div class="ui teal button">Sign Up</div>
+    <div class="ui mini buttons">
+      <div class="item">
+        <div class="ui blue button">
+          <i class="key icon"></i>
+          Log In
+        </div>
+        <div class="ui green button">
+          <i class="user icon"></i>
+          Sign Up
+        </div>
+      </div>
     </div>
   </div>
 </div>

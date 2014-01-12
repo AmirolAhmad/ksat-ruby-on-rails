@@ -11,19 +11,23 @@
 // about supported directives.
 //
 //= require jquery
-//= require_self
 //= require jquery_ujs
+//= require_self
+//= require jquery.turbolinks
 //= require turbolinks
 //= require_tree .
 
 $(document).ready(function () {
 	$('.ui.dropdown')
-	.dropdown();
+	.dropdown({
+		on 			: 'hover'
+	});
 
 	$('.delete')
 	.popup({
-		title    : 'Delete',
-		content  : 'You can\'t undo this step once you have confirm to delete your task list item',
-		variation : 'small inverted'
+		title    	: 'Delete',
+		on 			: 'hover',
+		content  	: 'You can\'t undo this step once you have confirm to delete your task list item',
+		variation 	: 'small inverted'
 	});
 });
