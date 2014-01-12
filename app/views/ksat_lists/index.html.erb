@@ -21,9 +21,9 @@
         <td><%= ksat_list.description %></td>
         <td>
           <div class="ui buttons">
-            <%= link_to "List Items", ksat_list_task_items_path(ksat_list), class: "tiny ui button" %>
-            <%= link_to 'Show', ksat_list, class: "tiny ui button" %>
-            <%= link_to 'Edit', edit_ksat_list_path(ksat_list), class: "tiny ui button" %>
+            <%= link_to '<i class="list layout icon"></i> List Items'.html_safe, ksat_list_task_items_path(ksat_list), class: "tiny ui button" %>
+            <%= link_to '<i class="bullseye icon"></i> Show'.html_safe, ksat_list, class: "tiny ui button" %>
+            <%= link_to '<i class="edit icon"></i> Edit'.html_safe, edit_ksat_list_path(ksat_list), class: "tiny ui button" %>
             <%= link_to '<i class="remove icon delete"></i> Delete'.html_safe, ksat_list, class: "tiny ui red button" , method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
         </td>
@@ -38,5 +38,3 @@
     </tr>
   </tfoot>
 </table>
-
-<br>
