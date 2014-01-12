@@ -12,7 +12,8 @@ describe "Viewing task items" do
 
 	it "displays no items when a task list is empty" do
 		visit_ksat_list(ksat_list)
-		expect(page.all("tr.task_items td").size).to eq(0)
+		# expect(page.all("table.task_items tr").size).to eq(0)
+		expect(page.all("table.task_items tr").size).to eq(2)
 	end
 
 	it "displays item content when a ksat list has items" do
@@ -21,9 +22,10 @@ describe "Viewing task items" do
 
 		visit_ksat_list(ksat_list)
 
-		expect(page.all("tr.task_items td").size).to eq(2)
+		# expect(page.all("table.task_items tr").size).to eq(2)
+		expect(page.all("table.task_items tr").size).to eq(4)
 
-		within "tr.task_items" do
+		within "table.task_items" do
 			expect(page).to have_content("Proton")
 			expect(page).to have_content("Perodua")
 		end
