@@ -1,4 +1,10 @@
-<h1><%= @ksat_list.title %> - Add Task List Item</h1>
+<h2 class="ui header">
+	<%= @ksat_list.title %> - Add Task List Item
+	<div class="sub header">
+		<%= @ksat_list.description %>
+	</div>
+</h2>
+
 <%= form_for [@ksat_list, @task_item] do |form| %>
   <%= render partial: form %>
 <% end %>

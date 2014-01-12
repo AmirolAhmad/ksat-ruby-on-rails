@@ -10,7 +10,7 @@ describe "Adding task items" do
 		click_button "Save"
 		
 		expect(page).to have_content("Added task list item.")
-		within("ul.task_items") do
+		within("tr.task_items") do
 			expect(page).to have_content("Proton")
 		end
 	end

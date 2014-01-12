@@ -1,6 +1,8 @@
 <h2 class="ui header">
 	<%= @ksat_list.title %>
-	<div class="sub header">Manage your account settings and set e-mail preferences.</div>
+	<div class="sub header">
+		<%= @ksat_list.description %>
+	</div>
 </h2>
 
 <div class="ui divider"></div>
@@ -16,7 +18,7 @@
 
   <tbody>
   	<% @ksat_list.task_items.each do |task_item| %>
-			<tr id="<%= dom_id(task_item) %>">
+			<tr class="task_items" id="<%= dom_id(task_item) %>">
 				<td>
 					<% if task_item.completed? %>
 						<%= task_item.completed_at %>			

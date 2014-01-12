@@ -1,6 +1,11 @@
-<h1>Editing ksat_list</h1>
+<h2 class="ui header">
+	Editing ksat_list
+	<div class="sub header">Manage your account settings and set e-mail preferences.</div>
+</h2>
+
+<div class="ui buttons">
+	<%= link_to 'Show', @ksat_list, class: "tiny ui teal button" %>
+	<%= link_to 'Back', ksat_lists_path, class: "tiny ui teal button" %>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @ksat_list %> |
-<%= link_to 'Back', ksat_lists_path %>

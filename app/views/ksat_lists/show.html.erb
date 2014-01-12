@@ -10,5 +10,7 @@
   <%= @ksat_list.description %>
 </p>
 
-<%= link_to 'Edit', edit_ksat_list_path(@ksat_list) %> |
-<%= link_to 'Back', ksat_lists_path %>
+<div class="ui buttons">
+	<%= link_to 'Edit', edit_ksat_list_path(@ksat_list), class: "tiny ui teal button" %>
+	<%= link_to 'Back', ksat_lists_path, class: "tiny ui teal button" %>
+</div>

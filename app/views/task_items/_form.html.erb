@@ -1,16 +1,27 @@
 <% if @task_item.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@task_item.errors.count, "error") %> prohibited this task item from being saved:</h2>
-
-    <ul>
+<div class="ui error message">
+  <div class="header">
+		<%= pluralize(@task_item.errors.count, "error") %> prohibited this task item from being saved:
+	</div>
+	<ul class="list">
     <% @task_item.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
-    </ul>
-  </div>
+  </ul>
+</div>
 <% end %>
 
-<%= form.label :content %>
-<%= form.text_field :content %>
+<div class="ui form segment">
+  <div class="field">
+		<%= form.label :content %>
+		<div class="ui left labeled icon input">
+			<%= form.text_field :content %>
+			<i class="user icon"></i>
+	    <div class="ui corner label">
+	      <i class="icon asterisk"></i>
+	    </div>
+	  </div>
+	</div>
+  <%= form.submit "Save", class: "ui blue submit button tiny" %>
+</div>
 
-<%= form.submit "Save" %>
